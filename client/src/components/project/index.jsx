@@ -7,7 +7,7 @@ export default function index({ index, title, projectType, setModal, link }) {
   };
 
   return (
-    <a 
+    <a
       href={link}
       className={styles.project}
       onMouseEnter={() => { setModal({ active: true, index }) }}

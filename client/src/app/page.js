@@ -17,7 +17,9 @@ export default function Home() {
           <div>
             <PassionProjects />
           </div>
-        <h1>Menu</h1>
+      </div>
+      <div>
+        <p>Menu</p>
       </div>
     </main>
   );

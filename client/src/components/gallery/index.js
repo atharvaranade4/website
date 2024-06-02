@@ -14,7 +14,6 @@ export default function Home() {
 
   return (
     <>
-      <div className={styles.body}>
       {
         projectData.map((project, index) => {
           return <Project 
@@ -27,7 +26,6 @@ export default function Home() {
           />
         })
       }
-      </div>
       <Modal
         modal={modal} 
         projects={projectData}
