@@ -1,16 +1,36 @@
 'use client'
-import Image from 'next/image'
 import styles from './page.module.css'
-import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Landing from '../components/Landing'
+import { useState } from 'react'
+import Project from '../components/project'
+import Modal from '../components/modal'
+import projectData from '../../public/data/projectsInfo.json'
+
 
 export default function Home() {
+  console.log(projectData)
+
+  const [modal, setModal] = useState({ active:false, index:0 })
+
 
   return (
     <main className={styles.main}>
-      <Landing />
+      <div className={styles.body}>
+      {
+        projectData.map((project, index) => {
+          return <Project 
+          key={index}
+          index={index}
+          title={project.title}
+          projectType={project.projectType}
+          setModal={setModal} 
+          />
+        })
+      }
+      </div>
+      <Modal 
+        modal={modal} 
+        projects={projectData}
+      />
     </main>
   )
 }

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Moodboard",
+    "src": "moodboard.jpg",
+    "projectType": "Fullstack",
+    "color": "#000000"
+  },
+  {
+    "title": "Blog",
+    "src": "blogs.jpg",
+    "projectType": "Fullstack",
+    "color": "#8C8C8C"
+  },
+  {
+    "title": "3D Viewer",
+    "src": "3D Viewer.jpg",
+    "projectType": "Fullstack",
+    "color": "#000000"
+  },
+  {
+    "title": "Matterport",
+    "src": "matterport.jpg",
+    "projectType": "Front-End",
+    "color": "#706D63"
+  }
+]
