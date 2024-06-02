@@ -47,18 +47,25 @@ export default function Landing() {
   }
 
   return (
+    // <main className={styles.main}>
+    //   <Image 
+    //     src="/images/portrait.jpg"
+    //     fill={true}
+    //     alt="background"
+    //   />
+    //   <div className={styles.sliderContainer}>
+    //   <div ref={slider} className={styles.slider}>
+    //     <p ref={firstText}>Atharva Ranade -</p>
+    //     <p ref={secondText}>Atharva Ranade -</p>
+    //   </div>
+    //   </div>
+    // </main>
     <main className={styles.main}>
       <Image 
         src="/images/portrait.jpg"
         fill={true}
         alt="background"
       />
-      <div className={styles.sliderContainer}>
-      <div ref={slider} className={styles.slider}>
-        <p ref={firstText}>Atharva Ranade -</p>
-        <p ref={secondText}>Atharva Ranade -</p>
-      </div>
-      </div>
     </main>
   )
 }

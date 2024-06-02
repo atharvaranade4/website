@@ -1,5 +1,13 @@
+body {
+  background-color: #1C1D20;
+  margin: 0;
+  padding: 0;
+}
 
 a {
-  /* Reset all styling */
   all: unset;
+}
+
+h1, h2, p {
+  color: white
 }

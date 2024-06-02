@@ -1,37 +1,24 @@
-'use client'
-import styles from './page.module.css'
-import { useState } from 'react'
-import Project from '../components/project'
-import Modal from '../components/modal'
-import projectData from '../../public/data/projectsInfo.json'
-
+'use client';
+import styles from './page.module.css';
+import Gallery from '../components/gallery';
+import Description from '../components/description'
+import PassionProjects from '../components/passionProjects'
+import Landing from '@/components/landing';
+import Image from 'next/image'
 
 export default function Home() {
-  // console.log(projectData)
-
-  const [modal, setModal] = useState({ active:false, index:0 })
-
-
   return (
     <main className={styles.main}>
-      <div className={styles.body}>
-      {
-        projectData.map((project, index) => {
-          return <Project 
-            key={index}
-            index={index}
-            title={project.title}
-            projectType={project.projectType}
-            setModal={setModal} 
-            link={project.link} // Pass the link prop here
-          />
-        })
-      }
+      <div className={styles.content}>
+          <Description />
+          <div className={styles.gallery}>
+            <Gallery />
+          </div>
+          <div>
+            <PassionProjects />
+          </div>
+        <h1>Menu</h1>
       </div>
-      <Modal
-        modal={modal} 
-        projects={projectData}
-      />
     </main>
-  )
+  );
 }
