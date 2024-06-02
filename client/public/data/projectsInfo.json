@@ -3,13 +3,15 @@
     "title": "Moodboard",
     "src": "moodboard.jpg",
     "projectType": "Fullstack",
-    "color": "#000000"
+    "color": "#000000",
+    "link": "https://www.google.com/"
   },
   {
     "title": "Blog",
     "src": "blogs.jpg",
     "projectType": "Fullstack",
-    "color": "#8C8C8C"
+    "color": "#8C8C8C",
+    "link": "https://unsplash.com/"
   },
   {
     "title": "3D Viewer",

@@ -1,4 +1,4 @@
-.modalContainer{
+.modalContainer {
   height: 350px;
   width: 400px;
   position: absolute;
@@ -10,14 +10,14 @@
   justify-content: center;
 }
 
-.modalSlider{
+.modalSlider {
   height: 100%;
   width: 100%;
   position: absolute;
   transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-.modal{
+.modal {
   height: 100%;
   width: 100%;
   display: flex;
@@ -25,26 +25,30 @@
   justify-content: center;
 }
 
-.modal img{
+.modal img {
   height: auto;
 }
 
-.cursor, .cursorLabel{
+.modalLink {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor,
+.cursorLabel {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #455CE9;
+  background-color: #455ce9;
   color: white;
   position: absolute;
-  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   font-weight: 300;
   pointer-events: none;
-}
-
-.cursorLabel{
-  background-color: transparent;
 }
