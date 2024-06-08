@@ -8,33 +8,36 @@ const phrases = ["Los Flamencos National Reserve", "is a nature reserve located"
 export default function Index() {
 
   return (
+	<>
+	<h1>Projects</h1>
     <div className={styles.description} >
-        {
-            phrases.map( (phrase, index) => {
-                return <div key={index}>{phrase}</div>
-            })
-        }
+			{
+				phrases.map( (phrase, index) => {
+					return <div key={index}>{phrase}</div>
+				})
+			}
     </div>
+	</>
   )
 }
 
 function AnimatedText({children}) {
-    const text = useRef(null);
+	const text = useRef(null);
 
-    useLayoutEffect( () => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.from(text.current, {
-            scrollTrigger: {
-                trigger: text.current,
-                scrub: true,
-                start: "0px bottom",
-                end: "bottom+=400px bottom",
-            },
-            opacity: 0,
-            left: "-200px",
-            ease: "power3.Out"
-        })
-    }, [])
+	useLayoutEffect( () => {
+		gsap.registerPlugin(ScrollTrigger);
+		gsap.from(text.current, {
+			scrollTrigger: {
+				trigger: text.current,
+				scrub: true,
+				start: "0px bottom",
+				end: "bottom+=400px bottom",
+			},
+			opacity: 0,
+			left: "-200px",
+			ease: "power3.Out"
+		})
+	}, [])
 
-    return <p ref={text}>{children}</p>
+	return <p ref={text}>{children}</p>
 }

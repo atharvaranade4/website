@@ -2,7 +2,7 @@
 import styles from './page.module.css';
 import Gallery from '../components/gallery';
 import Description from '../components/description'
-import PassionProjects from '../components/passionProjects'
+import PassionGallery from '../components/passionGallery'
 import Landing from '@/components/landing';
 import Image from 'next/image'
 
@@ -15,7 +15,7 @@ export default function Home() {
             <Gallery />
           </div>
           <div>
-            <PassionProjects />
+            <PassionGallery />
           </div>
       </div>
       <div>

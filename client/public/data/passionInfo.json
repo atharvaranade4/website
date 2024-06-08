@@ -1,10 +1,13 @@
 [
   {
     "title": "Photography",
-    "src": "photo.jpg"
+    "src": "photo.jpg",
+    "link": "https://www.google.com/"
   },
   {
-    "title": "Sketch",
-    "src": "sketch.jpg"
+    "title": "Sketching",
+    "src": "sketch.jpg",
+    "color": "#000000",
+    "link": "https://www.google.com/"
   }
 ]

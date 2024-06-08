@@ -24,5 +24,11 @@
     "src": "matterport.jpg",
     "projectType": "Front-End",
     "color": "#706D63"
+  },
+  {
+    "title": "TOC",
+    "src": "matterport.jpg",
+    "projectType": "UI/UX",
+    "color": "#706D63"
   }
 ]

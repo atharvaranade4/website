@@ -1,0 +1,27 @@
+.passionProjectContainer {
+  position: relative;
+  color: white;
+  margin-top: 25vh;
+  margin-bottom: 15vh;
+}
+
+.passionDescription{
+  display: flex;
+  height: 800px;
+  justify-content: space-between;
+  gap: 5%;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40%;
+}
+
+.projectList{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 250px;
+}
