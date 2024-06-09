@@ -13,7 +13,7 @@ export default function Home() {
 
 
   return (
-    <>
+    <div className={styles.gallery}>
       {
         projectData.map((project, index) => {
           return <Project 
@@ -30,6 +30,6 @@ export default function Home() {
         modal={modal} 
         projects={projectData}
       />
-    </>
+    </div>
   )
 }

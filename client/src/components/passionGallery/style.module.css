@@ -1,7 +1,6 @@
 .passionProjectContainer {
   position: relative;
-  color: white;
-  margin-top: 25vh;
+  margin-top: 35vh;
   margin-bottom: 15vh;
 }
 
@@ -24,4 +23,8 @@
   flex-direction: column;
   position: relative;
   margin-top: 250px;
+}
+
+.column p {
+  color: gray
 }

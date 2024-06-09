@@ -4,22 +4,26 @@ import Gallery from '../components/gallery';
 import Description from '../components/description'
 import PassionGallery from '../components/passionGallery'
 import Landing from '@/components/landing';
-import Image from 'next/image'
+import ThreeDMesh from '@/components/threeDMesh';
+import Menu from '@/components/menu'
+import Header from '@/components/header'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.content}>
-          <Description />
-          <div className={styles.gallery}>
-            <Gallery />
+    <main>
+      <Header />
+      <div className={styles.mainContainer}>
+        <ThreeDMesh />
+        <div className={styles.contentContainer}>
+          <div className={styles.content}>
+              <Description />
+              <Gallery />
+              <PassionGallery />
           </div>
-          <div>
-            <PassionGallery />
+          <div className={styles.menu} >
+            <Menu />
           </div>
-      </div>
-      <div>
-        <p>Menu</p>
+        </div>
       </div>
     </main>
   );

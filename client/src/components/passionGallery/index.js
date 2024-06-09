@@ -1,12 +1,13 @@
 'use client'
 import styles from './style.module.css';
 import { useState, useRef, useEffect } from 'react';
-import Project from '../project';
-import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
 
+import Project from '../project';
 import CursorModal from '../cursorModal';
 import passionProjectData from '../../../public/data/passionInfo.json';
+import phrases from '../../../public/data/phrases.json';
 import ImageModal from '../imageModal';
 
 export default function Home() {
@@ -32,7 +33,8 @@ export default function Home() {
         <div className={styles.passionDescription}>
           <div className={styles.column}>
             <h1>Passion</h1>
-            <p>Some</p>
+            <p>{ phrases[1] }</p>
+            <p>{ phrases[2] }</p>
           </div>
           <div ref={passionImageContainer} className={styles.imageContainer}>
             <ImageModal
