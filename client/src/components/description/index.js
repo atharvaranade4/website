@@ -9,8 +9,8 @@ export default function Index() {
 
   return (
 	<>
+	<h1>Projects</h1>
     <div className={styles.description} >
-			<h1>Projects</h1>
 			{
 				phrases.map( (phrase, index) => {
 					return <div key={index}>{phrase}</div>
