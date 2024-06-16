@@ -1,5 +1,7 @@
+'use client'
 import React, { useEffect } from 'react';
-import styles from './style.module.css';
+import styles from './style.module.scss';
+import Magnetic from '../../common/Magnetic';
 
 function Index() {
 
@@ -37,8 +39,18 @@ function Index() {
           ></div>
         </div>
         <div className={styles.navContainer}>
-          <p>About</p>
-          <p>Contact</p>
+          <Magnetic>
+            <div className={styles.el}>
+                <a>Work</a>
+                <div className={styles.indicator}></div>
+            </div>
+          </Magnetic>
+          <Magnetic>
+            <div className={styles.el}>
+                <a>Contact</a>
+                <div className={styles.indicator}></div>
+            </div>
+          </Magnetic>
         </div>
       </div>
     </div>

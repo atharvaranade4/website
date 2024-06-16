@@ -1,6 +1,6 @@
 .modalContainer {
-  height: 500px;
-  width: 600px;
+  height: 400px;
+  width: 500px;
   position: absolute;
   background-color: white;
   overflow: hidden;
@@ -27,7 +27,6 @@
 
 .modal img {
   height: auto;
-  width: 50%;
 }
 
 .modalLink {

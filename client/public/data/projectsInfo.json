@@ -14,18 +14,6 @@
     "link": "https://unsplash.com/"
   },
   {
-    "title": "3D Viewer",
-    "src": "3D Viewer.jpg",
-    "projectType": "Fullstack",
-    "color": "#000000"
-  },
-  {
-    "title": "Matterport",
-    "src": "matterport.jpg",
-    "projectType": "Front-End",
-    "color": "#706D63"
-  },
-  {
     "title": "TOC",
     "src": "matterport.jpg",
     "projectType": "UI/UX",

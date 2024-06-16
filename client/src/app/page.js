@@ -5,13 +5,10 @@ import Description from '../components/description'
 import PassionGallery from '../components/passionGallery'
 import Landing from '@/components/landing';
 import ThreeDMesh from '@/components/threeDMesh';
-import Menu from '@/components/menu'
-import Header from '@/components/header'
 
 export default function Home() {
   return (
-    <main>
-      <Header />
+    <main id='my-scrollbar'>
       <div className={styles.mainContainer}>
         <ThreeDMesh />
         <div className={styles.contentContainer}>
@@ -20,9 +17,9 @@ export default function Home() {
               <Gallery />
               <PassionGallery />
           </div>
-          <div className={styles.menu} >
+          {/* <div className={styles.menu} >
             <Menu />
-          </div>
+          </div> */}
         </div>
       </div>
     </main>

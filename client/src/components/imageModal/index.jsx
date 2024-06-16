@@ -15,7 +15,7 @@ function ImageModal({ modal, projects }) {
           return <div className={styles.modal} style={{backgroundColor: color}} key={`modal_${index}`}>
               <Image 
               src={`/images/${src}`}
-              width={500}
+              width={450}
               height={0}
               alt="image"
               />

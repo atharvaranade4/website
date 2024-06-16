@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* Add these new classes */
 .text-white {
   color: white !important;
@@ -33,7 +37,7 @@ h1 {
 }
 
 ::-webkit-scrollbar {
-  width: 0.75rem;
+  display: none;
 }
 
 /* Track */

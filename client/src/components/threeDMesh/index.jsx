@@ -2,7 +2,7 @@ import React from 'react'
 
 function index() {
   return (
-    <div style={{ backgroundColor: 'black', height: '100vh' }}>      
+    <div style={{ backgroundColor: '#1C1D20', height: '100vh' }}>      
     </div>
   )
 }
