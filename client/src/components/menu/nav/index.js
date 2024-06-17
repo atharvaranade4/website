@@ -7,7 +7,8 @@ import { menuSlide } from '../anim';
 import Link from './Link';
 import Curve from './Curve';
 import Footer from './Footer';
-import useScrollDirection from './../../../app/hooks/useScrollDirection'
+import useScrollDirection from '@/app/hooks/useScrollDirection'
+
 const navItems = [
   {
     title: "Home",
@@ -26,7 +27,7 @@ const navItems = [
 export default function Index() {
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);
-  const scrollDirection = useScrollDirection();
+
 
   return (
     <motion.div
@@ -34,10 +35,10 @@ export default function Index() {
       initial="initial"
       animate="enter"
       exit="exit"
-      className={`${styles.menu} ${scrollDirection === 'down' ? styles.hidden : styles.visible}`}
+      className={`${styles.navMenu}`}
     >
-      <div className={styles.body}>
-        <div onMouseLeave={() => setSelectedIndicator(pathname)} className={styles.nav}>
+      <div className={styles.navBody}>
+        <div onMouseLeave={() => setSelectedIndicator(pathname)} className={styles.nav} > 
           <div className={styles.header}>
             <p>Navigation</p>
           </div>

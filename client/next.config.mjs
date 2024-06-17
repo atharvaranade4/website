@@ -1,4 +1,14 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import { join } from 'path';
+import { fileURLToPath } from 'url';
 
-export default nextConfig;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = join(__filename, '..');
+
+export default {
+  reactStrictMode: true,
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  webpack: (config) => {
+    config.resolve.modules.push(join(__dirname, 'src'));
+    return config;
+  },
+};

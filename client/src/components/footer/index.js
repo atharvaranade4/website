@@ -25,7 +25,7 @@ export default function Index() {
         handleResize();
 
         const updateTime = () => {
-            setLocalTime(formatLocalTime());
+            setLocalTime(formatSeattleTime());
         };
 
         updateTime();
@@ -37,62 +37,63 @@ export default function Index() {
         };
     }, []);
 
-    const formatLocalTime = () => {
-        const now = new Date();
-
-        let hours = now.getHours();
-        const minutes = now.getMinutes();
-        const period = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12 || 12; // Convert to 12-hour format and handle midnight (0)
-        const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-
-        const timezoneOffset = -now.getTimezoneOffset();
-        const offsetHours = Math.floor(timezoneOffset / 60);
-        const offsetMinutes = timezoneOffset % 60;
-        const formattedOffsetMinutes = offsetMinutes < 10 ? `0${offsetMinutes}` : offsetMinutes;
-        const offsetSign = offsetHours >= 0 ? '+' : '-';
-        const formattedOffset = `${offsetSign}${Math.abs(offsetHours)}`;
-
-        return `${hours}:${formattedMinutes} ${period} GMT${formattedOffset}`;
-    };
+		const formatSeattleTime = () => {
+			// Get current time in Seattle using the "America/Los_Angeles" time zone
+			const now = new Date();
+			const options = {
+				hour: 'numeric',
+				minute: 'numeric',
+				hour12: true,
+				timeZone: 'America/Los_Angeles',
+			};
+			const formatter = new Intl.DateTimeFormat('en-US', options);
+			const formattedTime = formatter.format(now);
+		
+			// Get the timezone offset for Seattle
+			const seattleDate = new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+			const seattleTime = new Date(seattleDate);
+			const timezoneOffset = -seattleTime.getTimezoneOffset();
+			const offsetHours = Math.floor(timezoneOffset / 60);
+			const offsetMinutes = timezoneOffset % 60;
+			const formattedOffsetMinutes = offsetMinutes < 10 ? `0${offsetMinutes}` : offsetMinutes;
+			const offsetSign = offsetHours >= 0 ? '+' : '-';
+			const formattedOffset = `${offsetSign}${Math.abs(offsetHours)}${formattedOffsetMinutes}`;
+		
+			return `${formattedTime} GMT${formattedOffset}`;
+		};
+		
 
     const x = useTransform(scrollYProgress, [0, 1], [0, 120]);
     const y = useTransform(scrollYProgress, [0, 1], [-200, 0]);
     const rotate = useTransform(scrollYProgress, [0, 1], [120, 90]);
 
     return (
-        <motion.div style={{ y }} ref={container} className={styles.contact}>
+        <motion.div style={{y}} ref={container} className={styles.contact}>
             <div className={styles.body}>
-                {/* <div className={styles.title}>
+                <div className={styles.title}>
                     <span>
-                        <div className={styles.imageContainer}>
-                            <Image
-                                fill={true}
-                                alt={"image"}
-                                src={`/images/background.jpg`}
-                            />
-                        </div>
-                        <h2>Let's work</h2>
+                        <h2>Let's Connect</h2>
                     </span>
-                    <h2>together</h2>
-                    <motion.div style={{ x }} className={styles.buttonContainer}>
-                        <Rounded backgroundColor={"#334BD3"} className={styles.button}>
-                            <p>Get in touch</p>
+                    <motion.div style={{x}} className={styles.buttonContainer}>
+                        <Rounded  backgroundColor={"#334BD3"} className={styles.button}>
+                            <p>Contact</p>
                         </Rounded>
                     </motion.div>
-                </div> */}
-                {/* <div className={styles.nav}>
-                    <Rounded>
-                        <p>info@dennissnellenberg.com</p>
-                    </Rounded>
-                    <Rounded>
-                        <p>+31 6 27 84 74 30</p>
-                    </Rounded>
-                </div> */}
+                </div>
                 <div className={styles.info}>
-                    <div className={styles.socials}>
+                    <div>
                         <span>
-                          <h3>socials</h3>
+                            <h3>Version</h3>
+                            <p>2024</p>
+                        </span>
+                        <span>
+                            <h3>Local Time</h3>
+                            <p>{localTime}</p>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h3>socials</h3>
                             <Magnetic>
                                 <p>Instagram</p>
                             </Magnetic>
@@ -101,18 +102,8 @@ export default function Index() {
                             <p>LinkedIn</p>
                         </Magnetic>
                         <Magnetic>
-                            <p>Github</p>
+                            <p>GitHub</p>
                         </Magnetic>
-                    </div>
-                    <div>
-                        <span>
-                            <h3>Version</h3>
-                            <p>2024</p>
-                        </span>
-                        <span>
-                            <h3>Time</h3>
-                            <p>{localTime}</p>
-                        </span>
                     </div>
                 </div>
             </div>

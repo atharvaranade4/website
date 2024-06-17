@@ -14,9 +14,7 @@ import { usePathname } from 'next/navigation';
 export default function Home() {
   const [isActive, setIsActive] = useState(false);
   const pathname = usePathname();
-  const header = useRef(null);
   const button = useRef(null);
-
 
   useEffect(() => {
     if (isActive) {
@@ -49,18 +47,15 @@ export default function Home() {
     <>
       <div className={styles.main}>
 
-      <div ref={button} className={styles.headerButtonContainer}>
+      <div ref={button} className={styles.menuButtonContainer}>
             <Rounded onClick={() => {setIsActive(!isActive)}} className={`${styles.button}`}>
                 <div className={`${styles.burger} ${isActive ? styles.burgerActive : ""}`}></div>
             </Rounded>
         </div>
-
       </div>
 
-      {/* Overlay to cover the screen when menu is open */}
       {isActive && <div className={styles.overlay} onClick={() => setIsActive(false)}></div>}
 
-      {/* Menu */}
       <AnimatePresence>
         {isActive && (
           <Nav />

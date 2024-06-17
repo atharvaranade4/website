@@ -22,7 +22,7 @@ export default function Home() {
             title={project.title}
             projectType={project.projectType}
             setModal={setModal} 
-            link={project.link} // Pass the link prop here
+            link={project.link}
           />
         })
       }

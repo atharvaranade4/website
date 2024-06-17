@@ -13,8 +13,8 @@ export default function index({ index, title, projectType, setModal, link }) {
       onMouseEnter={() => { setModal({ active: true, index }) }}
       onMouseLeave={() => { setModal({ active: false, index }) }}
       onClick={handleClick}
-      target="_blank" // moved here
-      rel="noopener noreferrer" // moved here
+      target="_blank"
+      rel="noopener noreferrer"
     >
       <h2>{title}</h2>
       <p>{projectType}</p>

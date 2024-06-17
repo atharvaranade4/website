@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 50px 0px 50px 0px;
-  border-bottom: 0.25px solid rgb(121, 121, 121);
+  border-bottom: 0.25px solid rgb(179, 179, 179);
   cursor: pointer;
   transition: all 0.2s;
 }
