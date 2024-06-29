@@ -1,0 +1,18 @@
+.developerTitleContainer{
+  grid-column-start: 1;
+}
+
+/* Styles for medium screens and above */
+@media (min-width: 768px) {
+  .developerTitleContainer {
+    grid-row-start: 1;
+  }
+}
+
+.bluetext {
+  color:#455CE9;
+}
+
+.name-animation {
+  opacity: 0;
+}

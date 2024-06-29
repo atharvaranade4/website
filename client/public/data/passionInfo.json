@@ -2,13 +2,13 @@
   {
     "title": "Photography",
     "src": "photo.jpg",
-    "color": "white",
+    "color": "#fafafa",
     "link": "https://www.google.com/"
   },
   {
     "title": "Sketching",
     "src": "sketch.jpg",
-    "color": "#000000",
+    "color": "#fafafa",
     "link": "https://www.google.com/"
   }
 ]
