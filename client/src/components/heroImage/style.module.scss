@@ -1,18 +1,27 @@
-.developerTitleContainer{
-  grid-column-start: 1;
+.developerTitleContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh; // or any height you prefer
 }
 
-/* Styles for medium screens and above */
-@media (min-width: 768px) {
-  .developerTitleContainer {
-    grid-row-start: 1;
-  }
+.heroTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; // Ensure it is above Shapes
+}
+
+.name-animation {
+  display: inline-block;
+  margin-right: 0.2rem;
 }
 
 .bluetext {
   color:#455CE9;
+  margin: 0.25rem;
 }
 
-.name-animation {
-  opacity: 0;
+.tagline{
 }
+

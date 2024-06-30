@@ -1,9 +1,9 @@
 import styles from './style.module.scss';
 import gsap from 'gsap';
 import { React, useEffect, useRef } from 'react';
+import Shapes from "@/components/heroImage/shapes";
 
 function Index() {
-
   const firstName = "Hi, I am Atharva, a"
   const lastName = " developer"
   const tagLine = "creative"
@@ -28,10 +28,10 @@ function Index() {
         )
         .fromTo(
           ".tagline",
-          { y: 100, opacity: 0 }, // Start 100px below the visible area
+          { y: 100, opacity: 0 },
           {
             opacity: 1,
-            y: 0, // Move to the final position
+            y: 20,
             duration: 1,
             ease: "power4.out",
           }
@@ -54,11 +54,14 @@ function Index() {
 
   return (
     <div className={styles.developerTitleContainer} ref={component}>
-      <h2>
-        <span>{renderLetters(firstName, "first")}</span><br />
-        <span className={`tagline ${styles.bluetext}`}>{tagLine}</span>
-        <span>{renderLetters(lastName, "last")}</span>
-      </h2>
+      <Shapes />
+      <div className={styles.heroTitle}>
+        <h2>
+          <span>{renderLetters(firstName, "first")}</span><br />
+          <span className={`tagline ${styles.bluetext}`}>{tagLine}</span>
+          <span>{renderLetters(lastName, "last")}</span>
+        </h2>
+      </div>
     </div>
   );
 }
