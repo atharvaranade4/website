@@ -1,9 +1,9 @@
-'use client'
-import React, { useEffect } from 'react';
-import styles from './style.module.scss';
-import Magnetic from '../../common/Magnetic';
+'use client';
+import React, { createContext, useRef, useEffect } from 'react';
+import Nav from './nav'; // Import the Nav component
+import styles from './styles.module.scss';
 
-function Index() {
+export default function Menu () {
 
   useEffect(() => {
     // Set the default theme to white
@@ -32,10 +32,7 @@ function Index() {
   };
 
   return (
-    <div className={styles.headerContainer}>
-      <div>
-        <p>Logo</p>
-      </div>
+    <div className={styles.menuContainer}>
       <div className={styles.rightContainer}>
         <div className={styles.circleContainer}>
           <div
@@ -47,23 +44,8 @@ function Index() {
             onClick={() => changeTheme('#1C1D20', 'text-white', 'white')}
           ></div>
         </div>
-        <div className={styles.navContainer}>
-          <Magnetic>
-            <div className={styles.el}>
-              <a>About</a>
-              <div className={styles.indicator}></div>
-            </div>
-          </Magnetic>
-          <Magnetic>
-            <div className={styles.el}>
-              <a>Contact</a>
-              <div className={styles.indicator}></div>
-            </div>
-          </Magnetic>
-        </div>
       </div>
+      <Nav />
     </div>
   );
-}
-
-export default Index;
+};
