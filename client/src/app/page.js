@@ -1,19 +1,29 @@
 'use client';
 import styles from './page.module.css';
 import Gallery from '@/components/gallery';
-import Description from '@/components/description/description';
 import PassionGallery from '@/components/passionGallery';
 import HeroImage from '@/components/heroImage';
 import AnchorMenu from '@/components/anchorMenu/anchorMenu'
-import ProjectSection from '../components/projects/projects'; // Import the Values section
+
+import Intro from '@/sections/intro/intro';
+import About from '@/sections/about/about';
+import Project from '../sections/projects/projects';
+import Playground from '@/sections/playground/playground';
+import Values from '@/sections/values/values';
+import Contact from '@/sections/contact/contact';
+
 import { ScrollProvider } from '@/context/ScrollContext'; // Import ScrollProvider
 
 export default function Home() {
   return (
     <ScrollProvider>
       <AnchorMenu />
-      <ProjectSection />
-      <Description />
+      <Intro />
+      <About />
+      <Project />
+      <Playground />
+      <Values />
+      <Contact />
     </ScrollProvider>
   );
 }

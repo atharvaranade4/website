@@ -6,7 +6,7 @@ const ProjectSection = () => {
   const sectionRefs = useScroll();
   return (
     <div ref={sectionRefs.projects} className={styles.projects}>
-      Projects
+      <h1>Projects</h1>
     </div>
   );
 };
