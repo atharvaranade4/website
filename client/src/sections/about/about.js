@@ -7,8 +7,8 @@ const phrases = ["Los Flamencos National Reserve", "is a nature reserve located"
 export default function About() {
 	const sectionRefs = useScroll();
   return (
-	<div ref={sectionRefs.about} className={styles.about}>
+	<section ref={sectionRefs.about} className={styles.about}>
 		<h1>About</h1>
-	</div>
+	</section>
   )
 }

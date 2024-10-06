@@ -5,9 +5,9 @@ import { useScroll } from '@/context/ScrollContext';
 const ProjectSection = () => {
   const sectionRefs = useScroll();
   return (
-    <div ref={sectionRefs.projects} className={styles.projects}>
+    <section ref={sectionRefs.projects} className={styles.projects}>
       <h1>Projects</h1>
-    </div>
+    </section>
   );
 };
 

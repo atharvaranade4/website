@@ -5,8 +5,8 @@ import { useScroll } from '@/context/ScrollContext';
 export default function Contact() {
 	const sectionRefs = useScroll();
   return (
-	<div ref={sectionRefs.contact} className={styles.contact}>
+	<section ref={sectionRefs.contact} className={styles.contact}>
 		<h1>Contact</h1>
-	</div>
+	</section>
   )
 }

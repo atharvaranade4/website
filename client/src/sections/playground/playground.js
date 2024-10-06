@@ -5,8 +5,8 @@ import { useScroll } from '@/context/ScrollContext';
 export default function Playground() {
 	const sectionRefs = useScroll();
   return (
-	<div ref={sectionRefs.playground} className={styles.playground}>
+	<section ref={sectionRefs.playground} className={styles.playground}>
 		<h1>Playground</h1>
-	</div>
+	</section>
   )
 }
