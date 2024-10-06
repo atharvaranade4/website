@@ -1,9 +1,7 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import Footer from '@/components/footer'
-import Header from '@/components/header/header'
-
-const inter = Inter({ subsets: ['latin'] })
+// Import your CSS files
+import './styles/font.css';      // Import the custom fonts
+import './styles/variables.css'; // Import the CSS variables
+import './styles/globals.css';   // Import the global styles
 
 export const metadata = {
   title: 'Atharva Ranade',
@@ -13,10 +11,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Header />
+      <body>
         {children}
-        {/* <Footer /> */}
       </body>
     </html>
   )
