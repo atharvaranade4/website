@@ -1,0 +1,9 @@
+:root {
+  --font--family: 'Roboto', sans-serif;
+  --font--style: normal;
+  --font-weight-regular: 300;  /* For normal text */
+  --font-weight-bold: 500;     /* For bold text */
+  --grid--app-margin: 2rem;
+  --white-theme: white;
+  --dark-theme: #1C1D20;
+}

@@ -1,0 +1,52 @@
+html {
+  scroll-behavior: smooth;
+  font-size: var(--font--size-regular);
+  line-height: var(--font--size-regular-line-height);
+}
+
+* {
+  font-family: var(--font--family);
+  font-style: var(--font--style);
+  font-feature-settings: var(--font--feature-settings);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-white {
+  color: white !important;
+}
+
+.text-black {
+  color: #1C1D20 !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  all: unset;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 90px;
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: 60px;
+  font-weight: var(--font-weight-bold);
+}
+
+p {
+  font-weight: var(--font-weight-regular);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
