@@ -5,9 +5,9 @@ import Magnetic from '../../common/Magnetic';
 
 function Header() {
   return (
-    <div className={styles.appHeader}>
+    <header className={styles.appHeader}>
       <p>Logo</p>
-    </div>
+    </header>
   )  
 }
 
