@@ -1,4 +1,5 @@
-'use client';
+// Main.js
+import React from 'react';
 import styles from './page.module.css';
 
 import Intro from '@/sections/intro/intro';
@@ -8,17 +9,31 @@ import Playground from '@/sections/playground/playground';
 import Values from '@/sections/values/values';
 import Contact from '@/sections/contact/contact';
 
-import { ScrollProvider } from '@/context/ScrollContext'; // Import ScrollProvider
+import { useScroll } from '@/context/ScrollContext';
 
 export default function Main() {
+  const { sectionRefs } = useScroll();
+  
   return (
     <main className={styles.main}>
-      <Intro />
-      <About />
-      <Project />
-      <Playground />
-      <Values />
-      <Contact />
+      <section ref={sectionRefs.intro} data-section="intro">
+        <Intro />
+      </section>
+      <section ref={sectionRefs.about} data-section="about">
+        <About />
+      </section>
+      <section ref={sectionRefs.projects} data-section="projects">
+        <Project />
+      </section>
+      <section ref={sectionRefs.playground} data-section="playground">
+        <Playground />
+      </section>
+      <section ref={sectionRefs.values} data-section="values">
+        <Values />
+      </section>
+      <section ref={sectionRefs.contact} data-section="contact">
+        <Contact />
+      </section>
     </main>
   );
 }

@@ -1,9 +1,8 @@
-import React, { createContext, useRef, useContext } from 'react';
+// ScrollContext.js
+import React, { createContext, useRef, useContext, useEffect, useState } from 'react';
 
-// Create the context
 const ScrollContext = createContext();
 
-// Create a provider component
 export const ScrollProvider = ({ children }) => {
   const sectionRefs = {
     intro: useRef(null),
@@ -14,12 +13,42 @@ export const ScrollProvider = ({ children }) => {
     contact: useRef(null),
   };
 
+  const [currentSection, setCurrentSection] = useState('');
+
+  useEffect(() => {
+    console.log('ScrollProvider mounted'); // Log when the provider mounts
+    console.log('Initial sectionRefs:', sectionRefs); // Log initial refs
+
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(`Section: ${entry.target.dataset.section}, Is Intersecting: ${entry.isIntersecting}`); // Log entry state
+        if (entry.isIntersecting) {
+          setCurrentSection(entry.target.dataset.section);
+        }
+      });
+    }, options);
+
+    Object.values(sectionRefs).forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+        console.log(`Observing: ${ref.current.id}`); // Log observed sections
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <ScrollContext.Provider value={sectionRefs}>
+    <ScrollContext.Provider value={{ sectionRefs, currentSection }}>
       {children}
     </ScrollContext.Provider>
   );
 };
 
-// Custom hook to use the ScrollContext
 export const useScroll = () => useContext(ScrollContext);
