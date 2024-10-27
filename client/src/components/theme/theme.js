@@ -1,47 +1,43 @@
 'use client';
-import React, { createContext, useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styles from './styles.module.scss';
+import Nav from '../nav/nav';
+import { useTheme } from '@/context/ThemeContext';
 
-export default function Theme () {
+export default function Theme() {
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    // Set the default theme to white
-    document.body.style.backgroundColor = 'white';
-    document.body.classList.add('text-black');
-    updateIndicatorColor('black');
-  }, []);
+    document.body.className = `theme--${theme}`; // Apply the theme class to the body
+  }, [theme]);
 
-  const changeTheme = (backgroundColor, textColorClass, indicatorColor) => {
-    document.body.style.backgroundColor = backgroundColor;
-
-    // Remove the other class if it exists
-    document.body.classList.remove(textColorClass === 'text-white' ? 'text-black' : 'text-white');
-    // Add the new class
-    document.body.classList.add(textColorClass);
-
-    // Update the indicator color
-    updateIndicatorColor(indicatorColor);
-  };
-
-  const updateIndicatorColor = (color) => {
-    const indicators = document.querySelectorAll(`.${styles.indicator}`);
-    indicators.forEach(indicator => {
-      indicator.style.backgroundColor = color;
-    });
+  const handleThemeToggle = (event) => {
+    const selectedTheme = event.target.getAttribute('data-theme'); // Get the theme from data-theme attribute
+    if (selectedTheme) {
+      setTheme(selectedTheme); // Update the theme directly
+    }
   };
 
   return (
     <div className={styles.themeContainer}>
       <div className={styles.circleContainer}>
         <div
-          className={`${styles.circle} ${styles.white}`}
-          onClick={() => changeTheme('white', 'text-black', 'black')}
+          className={`${styles.circle} ${styles.theme01}`} // Assign class for theme 01
+          data-theme="01"
+          onClick={handleThemeToggle}
         ></div>
         <div
-          className={`${styles.circle} ${styles.black}`}
-          onClick={() => changeTheme('#1C1D20', 'text-white', 'white')}
+          className={`${styles.circle} ${styles.theme02}`} // Assign class for theme 02
+          data-theme="02"
+          onClick={handleThemeToggle}
+        ></div>
+        <div
+          className={`${styles.circle} ${styles.theme03}`} // Assign class for theme 03
+          data-theme="03"
+          onClick={handleThemeToggle}
         ></div>
       </div>
+      <Nav />
     </div>
   );
-};
+}
