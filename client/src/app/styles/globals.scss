@@ -1,0 +1,71 @@
+html {
+  scroll-behavior: smooth;
+  font-size: var(--font--size-regular);
+  line-height: var(--font--size-regular-line-height);
+}
+
+* {
+  font-family: var(--font--family);
+  font-style: var(--font--style);
+  font-feature-settings: var(--font--feature-settings);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: var(--color--foreground--100);
+  background-color: var(--color--background--100);
+}
+
+/* Theme 1 */
+body.theme--01 {
+  --color--foreground--100: rgb(0, 0, 0);
+  --color--foreground--33: rgba(0 0 0 / 0.33);
+  --color--background--100: rgb(255, 255, 255);
+}
+
+/* Theme 2 */
+ body.theme--02 {
+  --color--foreground--100: rgb(255, 255, 255);
+  --color--foreground--33: rgba(255 255 255 / 0.3);
+  --color--background--100: rgb(0, 0, 0);
+}
+
+/* Theme 3 */
+body.theme--03 {
+  --color--foreground--100: rgb(207 188 236);
+  --color--foreground--33: rgba(207 188 236 / 0.3);
+  --color--background--100: rgba(46, 50, 72);
+}
+
+a {
+  all: unset;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 90px;
+  font-weight: var(--font-weight-bold);
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-size: 60px;
+  font-weight: var(--font-weight-bold);
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-weight: var(--font-weight-regular);
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

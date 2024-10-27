@@ -2,8 +2,16 @@
   --font--family: 'Roboto', sans-serif;
   --font--style: normal;
   --font-weight-regular: 300;  /* For normal text */
-  --font-weight-bold: 500;     /* For bold text */
-  --grid--app-margin: 2rem;
+  --font-weight-bold: 700;     /* For bold text */
+
   --white-theme: white;
-  --dark-theme: #1C1D20;
+  --text-white: rgb(255 255 255);
+  --text-white-33: rgb(255 255 255 / 0.333);
+
+  --black-theme: #1C1D20;
+  --text-black: rgb(0 0 0);
+  --text-black-33: rgb(0 0 0 / 0.333);
+
+  --grid-app-xheight: 200px;
+  --grid-app-margin: 2rem;
 }

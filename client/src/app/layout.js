@@ -1,7 +1,7 @@
 // Import your CSS files
 import './styles/font.css';      // Import the custom fonts
 import './styles/variables.css'; // Import the CSS variables
-import './styles/globals.css';   // Import the global styles
+import './styles/globals.scss';   // Import the global styles
 
 export const metadata = {
   title: 'Atharva Ranade',
