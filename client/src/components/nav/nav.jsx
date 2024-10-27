@@ -1,34 +1,41 @@
 import React from 'react';
 import menuItems from '../../../public/data/menuItems';
 import styles from './styles.module.scss';
-import { useScroll } from '@/context/ScrollContext'; // Import useScroll
+import { useScroll } from '@/context/ScrollContext';
+import { useTheme } from '@/context/ThemeContext';
 
 const Nav = () => {
-  const sectionRefs = useScroll();
-
+  const { currentSection, sectionRefs } = useScroll();
+  
   const scrollToSection = (section) => {
     const sectionRef = sectionRefs[section.toLowerCase()];
     if (sectionRef && sectionRef.current) {
       window.scrollTo({
         top: sectionRef.current.offsetTop,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
     }
   };
 
+  // Generate a class based on the current theme
+  const navItemClass = (item) => {
+    const isActive = currentSection === item.toLowerCase();
+    return `${styles.navitem} ${isActive ? styles.navItemActive : ''}`
+  };
+
   return (
     <nav className={styles.navContainer}>
-      <ul>
+      <div>
         {menuItems.map((item, index) => (
-          <li
+          <div
             key={index}
             onClick={() => scrollToSection(item)}
-            style={{ cursor: 'pointer', padding: '10px 0' }}
+            className={navItemClass(item)}
           >
             {item}
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </nav>
   );
 };

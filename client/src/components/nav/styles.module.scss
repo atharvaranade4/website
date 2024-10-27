@@ -1,6 +1,25 @@
-.navContainer{
+/* styles.module.scss */
+.navContainer {
   position: fixed;
   z-index: 100;
   user-select: none;
-  font-family: --var(--font--family);
+  font-family: var(--font--family);
+  top: var(--grid-app-xheight);
+  left: var(--grid-app-margin);
+}
+
+.navitem {
+  font-size: var(--font--size-regular);
+  padding: 2px 0;
+  color: var(--color--foreground--33); // Use the hover color from CSS variable
+  transition: color 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    color: var(--color--foreground--100); // Use the hover color from CSS variable
+  }
+  
+  &.navItemActive {
+    color: var(--color--foreground--100);
+  }
 }
