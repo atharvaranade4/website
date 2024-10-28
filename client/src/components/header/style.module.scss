@@ -2,4 +2,32 @@
   position: fixed;
   z-index: 100;
   width: 100%;
+  padding: 0 var(--grid-app-margin);
+  box-sizing: border-box; // Include padding in width calculation
+}
+
+.content {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  padding: 12px 0;
+}
+
+.actions {
+  display: none; // Hide by default
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+
+  @media (max-width: 1080px) {
+    display: flex; // Show on screens smaller than 1020px
+  }
+}
+
+.navigation {
+  padding: 8px;
 }

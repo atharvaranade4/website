@@ -4,14 +4,14 @@
   --font-weight-regular: 300;  /* For normal text */
   --font-weight-bold: 700;     /* For bold text */
 
-  --white-theme: white;
-  --text-white: rgb(255 255 255);
-  --text-white-33: rgb(255 255 255 / 0.333);
-
-  --black-theme: #1C1D20;
-  --text-black: rgb(0 0 0);
-  --text-black-33: rgb(0 0 0 / 0.333);
-
-  --grid-app-xheight: 200px;
-  --grid-app-margin: 2rem;
+  --grid-app-columns: var(--grid-app-columns-12);
+  --grid-app-columns-12: repeat(12, [col-start] 1fr);
+  --grid-app-columns-6: repeat(6, [col-start] 1fr);
+  --grid-app-columns-4: repeat(4, [col-start] 1fr);
+  --grid-app-columns-3: repeat(3, [col-start] 1fr);
+  --grid-app-columns-2: repeat(2, [col-start] 1fr);
+  --grid-app-columns-1: repeat(1, [col-start] 1fr);
+  --grid-app-gutter: 20px;
+  --grid-app-xheight: 220px;
+  --grid-app-margin: 40px;
 }

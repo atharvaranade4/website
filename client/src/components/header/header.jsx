@@ -1,14 +1,25 @@
-'use client'
-import React, { useEffect } from 'react';
+// Header.js
+import React from 'react';
 import styles from './style.module.scss';
-import Magnetic from '../../common/Magnetic';
+import { useNavContext } from '../../context/NavContext';
 
 function Header() {
+  const { toggleVisibility, isMobile } = useNavContext();
+
   return (
     <header className={styles.appHeader}>
-      <p>Logo</p>
+      <div className={styles.content}>
+        <div className={styles.brand}>Logo</div>
+        {isMobile && ( // Show only on mobile screens
+          <div className={styles.actions}>
+            <div className={styles.navigation} onClick={toggleVisibility}>
+              Actions
+            </div>
+          </div>
+        )}
+      </div>
     </header>
-  )  
+  );
 }
 
 export default Header;
