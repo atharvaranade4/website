@@ -1,4 +1,34 @@
+/* projects.module.scss */
+
 .projects {
   height: 1000px;
-  display: flex;
+  padding: 0 var(--grid-app-margin);
+  display: grid;
+  grid-template-columns: var(--grid-app-columns);
+  gap: var(--grid-app-gutter);
+
+  @media (max-width: 1280px) {
+    grid-template-columns: var(--grid-app-columns-6); // Uses the 4-column setup
+  }
+
+  @media (max-width: 1020px) {
+    grid-template-columns: var(--grid-app-columns-3); // Uses the 4-column setup
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: var(--grid-app-columns-1); // Uses the 4-column setup
+  }
+}
+
+.content {
+  padding: calc(var(--grid-app-xheight) - 11px) 0 80px 0;
+  position: relative;
+  grid-column: 5 / -1;
+
+  @media (max-width: 1280px) {
+    grid-column: 3 / -1;
+  }
+  @media (max-width: 1020px) {
+    grid-column: 1 / -1;
+  }
 }

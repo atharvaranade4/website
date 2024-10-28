@@ -16,22 +16,22 @@ export default function Main() {
   
   return (
     <main className={styles.main}>
-      <section ref={sectionRefs.intro} data-section="intro">
+      <section ref={sectionRefs.intro} className={styles.section} data-section="intro">
         <Intro />
       </section>
-      <section ref={sectionRefs.about} data-section="about">
+      <section ref={sectionRefs.about} className={styles.section} data-section="about">
         <About />
       </section>
-      <section ref={sectionRefs.projects} data-section="projects">
+      <section ref={sectionRefs.projects} className={styles.section} data-section="projects">
         <Project />
       </section>
-      <section ref={sectionRefs.playground} data-section="playground">
+      <section ref={sectionRefs.playground} className={styles.section} data-section="playground">
         <Playground />
       </section>
-      <section ref={sectionRefs.values} data-section="values">
+      <section ref={sectionRefs.values} className={styles.section} data-section="values">
         <Values />
       </section>
-      <section ref={sectionRefs.contact} data-section="contact">
+      <section ref={sectionRefs.contact} className={styles.section} data-section="contact">
         <Contact />
       </section>
     </main>
