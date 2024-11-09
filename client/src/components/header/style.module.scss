@@ -1,9 +1,9 @@
 .appHeader {
   position: fixed;
-  z-index: 100;
+  z-index: 1000;
   width: 100%;
   padding: 0 var(--grid-app-margin);
-  box-sizing: border-box; // Include padding in width calculation
+  box-sizing: border-box;
 }
 
 .content {
@@ -18,16 +18,44 @@
 }
 
 .actions {
-  display: none; // Hide by default
+  display: none;
   align-items: center;
   gap: 16px;
   cursor: pointer;
 
   @media (max-width: 1080px) {
-    display: flex; // Show on screens smaller than 1020px
+    display: flex;
   }
 }
 
-.navigation {
-  padding: 8px;
+.hamburger {
+  position: relative;
+  width: 24px;
+  height: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color--foreground--100);
+    transition: 0.3s ease;
+  }
+
+  &.open span:first-child {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 7px;
+  }
+
+  &.open span:last-child {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 7px;
+  }
 }
+
