@@ -1,4 +1,4 @@
-/* styles.module.scss */
+/* Styles for the navContainer */
 .navContainer {
   position: fixed;
   z-index: 100;
@@ -6,20 +6,116 @@
   font-family: var(--font--family);
   top: var(--grid-app-xheight);
   left: var(--grid-app-margin);
+  display: block; // Default visibility for larger screens
+
+  /* Hide by default on smaller screens; controlled by .hidden and .visible classes */
+  @media (max-width: 1080px) {
+    display: none;
+  }
+
+  &.fullscreen {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color--background--100);
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 10rem;
+    padding-left: var(--grid-app-margin);
+    opacity: 0;
+    visibility: hidden; // Initially hidden
+    transition: opacity 0.3s ease-out 0.3s, visibility 0s linear 1s; // Apply delay here
+
+    /* Increase font size of nav items when fullscreen is active */
+    .navitem {
+      font-size: var(--font--size-medium); 
+    }
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible; // Show menu with a delay
+    transition: opacity 0.3s ease-out;
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden; // Hide menu
+  }
+
+  .navitem {
+    font-size: var(--font--size-regular);
+    padding: 2px 0;
+    color: var(--color--foreground--33);
+    opacity: 0; // Initially hide the items
+    transition: color 0.3s;
+
+    /* Animate each item to fade in */
+    animation: fadeIn 0.3s ease-out forwards; // Apply the animation
+
+    &:hover {
+      cursor: pointer;
+      color: var(--color--foreground--100);
+    }
+
+    &.navItemActive {
+      color: var(--color--foreground--100);
+    }
+
+    /* Staggered animation delay using nth-child */
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+    &:nth-child(5) {
+      animation-delay: 0.4s;
+    }
+    &:nth-child(6) {
+      animation-delay: 0.5s;
+    }
+  }
+
+  /* Adjust spacing for mobile view within .fullscreen */
+  .fullscreen .navitem {
+    padding: 4px 0; // Increased spacing between items for mobile view
+  }
 }
 
-.navitem {
-  font-size: var(--font--size-regular);
-  padding: 2px 0;
-  color: var(--color--foreground--33); // Use the hover color from CSS variable
-  transition: color 0.3s;
+/* Menu items fade in after fullscreen is visible */
+.navContainer.fullscreen.visible .menuItems {
+  opacity: 1;
+  visibility: visible;
+}
 
-  &:hover {
-    cursor: pointer;
-    color: var(--color--foreground--100); // Use the hover color from CSS variable
+.navContainer.fullscreen + .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Body content fades out when menu is visible */
+.bodyContent.menuOpen {
+  opacity: 0.2;
+}
+
+/* Keyframe for fadeIn animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  &.navItemActive {
-    color: var(--color--foreground--100);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
