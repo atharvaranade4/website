@@ -7,15 +7,18 @@ import Theme from '@/components/theme/theme';
 
 import { ScrollProvider } from '@/context/ScrollContext';
 import { ThemeProvider } from '@/context/ThemeContext';
+import { NavProvider } from '@/context/NavContext';
 
 export default function Home() {
   return (
     <ThemeProvider>
       <ScrollProvider>
-        <Header />
-        <Nav />
-        <Main />
-        <Theme />
+        <NavProvider>
+          <Header />
+          <Nav />
+          <Main />
+          <Theme />
+        </NavProvider>
       </ScrollProvider>
     </ThemeProvider>
   );
