@@ -37,7 +37,6 @@ export default function Theme() {
           onClick={handleThemeToggle}
         ></div>
       </div>
-      <Nav />
     </div>
   );
 }
