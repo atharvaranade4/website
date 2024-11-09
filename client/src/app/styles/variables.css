@@ -1,8 +1,12 @@
 :root {
   --font--family: 'Roboto', sans-serif;
   --font--style: normal;
+
   --font-weight-regular: 300;  /* For normal text */
   --font-weight-bold: 700;     /* For bold text */
+
+  --font--size-regular: 16px;
+  --font--size-medium: 22px;
 
   --grid-app-columns: var(--grid-app-columns-12);
   --grid-app-columns-12: repeat(12, [col-start] 1fr);

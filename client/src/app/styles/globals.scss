@@ -15,6 +15,7 @@ html {
 body {
   color: var(--color--foreground--100);
   background-color: var(--color--background--100);
+  margin: 0px;
 }
 
 /* Theme 1 */
@@ -36,6 +37,29 @@ body.theme--03 {
   --color--foreground--100: rgb(207 188 236);
   --color--foreground--33: rgba(207 188 236 / 0.3);
   --color--background--100: rgba(46, 50, 72);
+}
+
+body.mobile-nav--is--transitioning {
+  overflow: hidden;
+}
+
+body.mobile-nav--is--transitioning .navContainer {
+  display: block;
+  transition: opacity 0.2s ease-in;
+  transition-delay: 0.3s;
+}
+
+body.mobile-nav--is--visible .navContainer {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.2s ease-out;
+  transition-delay: 0;
+}
+
+body.mobile-nav--is--visible .navContainer .item {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
 }
 
 a {
