@@ -7,7 +7,7 @@ const ProjectSection = () => {
   return (
     <section className={styles.projects}>
       <div className={styles.content}>
-        <h1>Projects</h1>
+        <h1>Projectsssss</h1>
         <Gallery />
       </div>
     </section>
