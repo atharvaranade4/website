@@ -4,19 +4,22 @@
     "src": "moodboard.jpg",
     "projectType": "Fullstack",
     "color": "#000000",
-    "link": "https://www.google.com/"
+    "link": "https://www.google.com/",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   },
   {
     "title": "Blog",
     "src": "blogs.jpg",
     "projectType": "Fullstack",
     "color": "#8C8C8C",
-    "link": "https://unsplash.com/"
+    "link": "https://unsplash.com/",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   },
   {
     "title": "TOC",
     "src": "matterport.jpg",
     "projectType": "UI/UX",
-    "color": "#706D63"
+    "color": "#706D63",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   }
 ]
