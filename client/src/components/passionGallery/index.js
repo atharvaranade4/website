@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 
-import Project from '../project';
+import Project from '../project/project';
 import CursorModal from '../cursorModal';
 import passionProjectData from '../../../public/data/passionInfo.json';
 import phrases from '../../../public/data/phrases.json';

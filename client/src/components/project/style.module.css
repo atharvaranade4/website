@@ -1,35 +1,100 @@
-.project{
+.project {
   display: flex;
+  flex-direction: row; /* Default row layout for larger screens */
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 0px 50px 0px;
-  border-bottom: 0.25px solid rgb(179, 179, 179);
+  padding: 50px 0px;
+  border-bottom: 0.25px solid var(--color--foreground--33);
   cursor: pointer;
   transition: all 0.2s;
 }
+.projectCard{
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+}
+.projectImage {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem; /* Space between image and title */
+}
 
-.project:hover{
+.projectTitle{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.projectDescription {
+  display: none; /* Hide by default */
+}
+
+.project:hover {
   opacity: 0.5;
 }
 
-.project:hover h2{
+.project:hover h2 {
   transform: translateX(-10px);
 }
 
-.project:hover p{
+.project:hover p {
   transform: translateX(10px);
 }
 
-.project h2{
+.project h2 {
   font-size: 60px;
-  margin: 0px;
+  margin: 0;
   font-weight: 400;
   transition: all 0.4s;
 }
 
-.project p{
+.project p {
   transition: all 0.4s;
-  font-weight: 300;
   padding-right: 2rem;
+}
+
+/* Responsive styling for screens smaller than 1080px */
+@media (max-width: 1080px) {
+  .project {
+    flex-direction: column; /* Change layout to column on small screens */
+    align-items: flex-start; /* Align items to the start for better layout */
+  }
+  .projectCard{
+    display: flex;
+    flex-direction: column;
+  }
+  .projectImage {
+    display: block; /* Show image on smaller screens */
+  }
+
+  .projectTitle{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .projectDescription {
+    display: block;
+    margin-top: 1rem;
+    font-size: 16px; /* Adjust font size for small screens */
+    color: var(--color--foreground--33);
+    font-weight: 400;
+  }
+  .project p{
+    padding: 0;
+  }
+
+  /* Disable hover effects on smaller screens */
+  .project:hover {
+    opacity: 1; /* Reset opacity */
+  }
+
+  .project:hover h2,
+  .project:hover p {
+    transform: none; /* Reset transform */
+  }
 }

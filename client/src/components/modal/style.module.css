@@ -2,7 +2,7 @@
   height: 400px;
   width: 500px;
   position: absolute;
-  background-color: white;
+  background-color: var(--color--background--100);
   overflow: hidden;
   pointer-events: none;
   display: flex;
@@ -42,8 +42,8 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: #455ce9;
-  color: white;
+  background-color: var(--color--foreground--100);
+  color: var(--color--background--100);
   position: absolute;
   display: flex;
   align-items: center;
