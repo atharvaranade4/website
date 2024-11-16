@@ -1,17 +1,10 @@
-// NavContext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const NavContext = createContext();
 
 export const NavProvider = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1080);
-
-  const toggleVisibility = () => {
-    if (isMobile) {
-      setIsVisible((prev) => !prev);
-    }
-  };
+  const [isMobile, setIsMobile] = useState(false); // Initialize without window reference
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,11 +13,18 @@ export const NavProvider = ({ children }) => {
       setIsVisible(!mobileView); // Always show NavContainer on larger screens
     };
 
-    window.addEventListener('resize', handleResize);
+    // Ensure this runs only in the browser
     handleResize(); // Set initial state on component mount
+    window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const toggleVisibility = () => {
+    if (isMobile) {
+      setIsVisible((prev) => !prev);
+    }
+  };
 
   return (
     <NavContext.Provider value={{ isVisible, toggleVisibility, isMobile }}>

@@ -1,19 +1,22 @@
-'use client'
-import styles from './style.module.css'
-import { useState, useEffect } from 'react'
-import Project from '../project/project'
-import Modal from '../modal/modal'
-import projectData from '../../../public/data/projectsInfo.json'
+'use client';
+import styles from './style.module.css';
+import { useState, useEffect } from 'react';
+import Project from '../project/project';
+import Modal from '../modal/modal';
+import projectData from '../../../public/data/projectsInfo.json';
 
 export default function Home() {
   const [modal, setModal] = useState({ active: false, index: 0 });
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1280);
+  const [isLargeScreen, setIsLargeScreen] = useState(false); // Initialize with false to avoid SSR issues
 
   // Check screen size and update state
   useEffect(() => {
+    // Only run on the client
     const handleResize = () => {
-      setIsLargeScreen(window.innerWidth > 1020);
+      setIsLargeScreen(window.innerWidth > 1280);
     };
+
+    handleResize(); // Set initial state on component mount
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -21,7 +24,7 @@ export default function Home() {
   return (
     <div className={styles.gallery}>
       {projectData.map((project, index) => (
-        <Project 
+        <Project
           key={index}
           index={index}
           title={project.title}
@@ -37,10 +40,10 @@ export default function Home() {
       {/* Show Modal only on large screens */}
       {isLargeScreen && modal.active && (
         <Modal
-          modal={modal} 
+          modal={modal}
           projects={projectData}
         />
       )}
     </div>
-  )
+  );
 }
