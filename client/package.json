@@ -14,6 +14,7 @@
     "@types/three": "^0.166.0",
     "framer-motion": "^11.2.10",
     "gsap": "^3.12.5",
+    "lenis": "^1.1.19",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
