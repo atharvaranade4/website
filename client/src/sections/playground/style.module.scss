@@ -1,11 +1,11 @@
 .playground{
-  height: 1000px;
-  margin-top: 3rem;
+  height: 100vh;
   position: relative;
   font-size: 1vw;
-}
-
-.description p{
-  margin: 0px;
-  position: relative;
+  // top: calc(var(--grid-app-xheight) + 10rem);
+  // border-top: 0.25px solid var(--color--foreground--33);
+  // border-bottom: 0.25px solid var(--color--foreground--33);
+  background-color: var(--color--foreground--10);
+  background-image: radial-gradient(circle, var(--color--foreground--33) 1px, transparent 1px);
+  background-size: 20px 20px; /* Adjust spacing of the dots */
 }

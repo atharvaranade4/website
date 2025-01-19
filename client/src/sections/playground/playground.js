@@ -6,7 +6,6 @@ export default function Playground() {
 	const sectionRefs = useScroll();
   return (
 	<section ref={sectionRefs.playground} className={styles.playground}>
-		<h1>Playground</h1>
 	</section>
   )
 }
