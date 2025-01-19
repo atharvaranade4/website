@@ -1,18 +1,15 @@
 .socialLinksMenu {
-  position: fixed;
-  left: var(--grid-app-margin);
-  bottom: calc(var(--grid-app-margin) + 40px);
   z-index: 100;
   display: flex;
   flex-direction: column;
 }
 
 /* Hide .socialLinksMenu on screens smaller than 1080px */
-@media (max-width: 1080px) {
-  .socialLinksMenu {
-    display: none;
-  }
-}
+// @media (max-width: 1080px) {
+//   .socialLinksMenu {
+//     display: none;
+//   }
+// }
 
 .socialLinks {
   font: var(--font--size-small);

@@ -6,7 +6,7 @@ import { useRef, useEffect, useState } from 'react';
 import { useScroll, motion, useTransform } from 'framer-motion';
 import Magnetic from '../../common/Magnetic';
 
-export default function Index() {
+export default function footer() {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
         target: container,
