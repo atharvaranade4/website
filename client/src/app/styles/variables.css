@@ -19,4 +19,6 @@
   --grid-app-gutter: 20px;
   --grid-app-xheight: 220px;
   --grid-app-margin: 80px;
+  --grid-app-margin-mobile: 40px;
+
 }
