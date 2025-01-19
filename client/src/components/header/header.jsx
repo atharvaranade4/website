@@ -1,37 +1,51 @@
-import React from 'react';
-import Image from 'next/image'; // Import Next.js Image component
+import {useRef, useState } from 'react';
 import styles from './style.module.scss';
 import { useNavContext } from '../../context/NavContext';
-import logo from '../../../public/images/Logo.svg'; // This path seems correct
+import Theme from '../theme/theme';
+import Magnetic from '@/common/Magnetic'
 
 function Header() {
   const { toggleVisibility, isVisible, isMobile } = useNavContext();
+  const header = useRef(null);
 
   return (
-    <header className={styles.appHeader}>
-      <div className={styles.content}>
-        <div className={styles.brand}>
-          {/* Use Next.js Image component */}
-          <div className={styles.overlayContainer}>
-          <Image
-            src="/images/Logo.svg"
-            alt="Logo"
-            width={isMobile ? 30 : 40}
-            height={isMobile ? 30 : 40}
-            className={styles.Logo}
-            />
+    <>
+      <div ref={header} className={styles.header}>
+        <div className={styles.logo}>
+          <p className={styles.copyright}>©</p>
+          <div className={styles.name}>
+            <p className={styles.codeBy}>Code by</p>
+            <p className={styles.atharva}>Atharva</p>
+            <p className={styles.ranade}>Ranade</p>
           </div>
         </div>
-        {isMobile && (
-          <div className={styles.actions} onClick={toggleVisibility}>
-            <div className={`${styles.hamburger} ${isVisible ? styles.open : ''}`}>
-              <span></span>
-              <span></span>
+        <div className={styles.themeSocialContainer}>
+        <Theme />
+        <div className={styles.social}>
+          <Magnetic>
+              <div className={styles.el}>
+                <a>LinkedIn</a>
+                <div className={styles.indicator}></div>
+              </div>
+          </Magnetic>
+          <Magnetic>
+              <div className={styles.el}>
+                  <a>Github</a>
+                  <div className={styles.indicator}></div>
+              </div>
+          </Magnetic>
+        </div>
+        </div>
+          {isMobile && (
+            <div className={styles.actions} onClick={toggleVisibility}>
+              <div className={`${styles.hamburger} ${isVisible ? styles.open : ''}`}>
+                <span></span>
+                <span></span>
+              </div>
             </div>
-          </div>
-        )}
+          )}   
       </div>
-    </header>
+    </>
   );
 }
 
