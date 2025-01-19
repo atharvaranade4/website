@@ -1,9 +1,8 @@
-// Main.js
+// Main.jss
 import React from 'react';
 import styles from './page.module.css';
-
 import Intro from '@/sections/intro/intro';
-import About from '@/sections/about/about';
+import Background from '@/sections/background/background';
 import Project from '../sections/projects/projects';
 import Playground from '@/sections/playground/playground';
 import Values from '@/sections/values/values';
@@ -19,17 +18,17 @@ export default function Main() {
       <section ref={sectionRefs.intro} className={styles.section} data-section="intro">
         <Intro />
       </section>
-      <section ref={sectionRefs.about} className={styles.section} data-section="about">
-        <About />
+      <section ref={sectionRefs.background} className={styles.section} data-section="background">
+        <Background />
+      </section>
+      <section ref={sectionRefs.skills} className={styles.section} data-section="skills">
+        <Values />
       </section>
       <section ref={sectionRefs.projects} className={styles.section} data-section="projects">
         <Project />
       </section>
       <section ref={sectionRefs.playground} className={styles.section} data-section="playground">
         <Playground />
-      </section>
-      <section ref={sectionRefs.values} className={styles.section} data-section="values">
-        <Values />
       </section>
       <section ref={sectionRefs.contact} className={styles.section} data-section="contact">
         <Contact />
