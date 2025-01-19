@@ -1,0 +1,38 @@
+.socialLinksMenu {
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hide .socialLinksMenu on screens smaller than 1080px */
+// @media (max-width: 1080px) {
+//   .socialLinksMenu {
+//     display: none;
+//   }
+// }
+
+.socialLinks {
+  font: var(--font--size-small);
+  color: var(--color--foreground--100);
+  transition: color 0.3s; /* Smooth color transitions */
+  position: relative; /* For pseudo-elements and arrow animation */
+  animation: fadeIn 0.3s ease-out forwards; /* Apply the animation */
+  display: inline-block;
+}
+
+.socialLinks:hover {
+  cursor: pointer;
+  color: var(--color--foreground--100);
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 1.2rem; /* Adjust arrow size */
+  transition: color 0.3s ease-in-out; /* Animate arrow movement */
+  color: var(--color--foreground--33)
+}
+
+.socialLinks:hover .arrow {
+  color: var(--color--foreground--100); /* Optionally change arrow color on hover */
+}

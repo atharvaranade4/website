@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
 import styles from './styles.module.scss';
-import Nav from '../nav/nav';
 import { useTheme } from '@/context/ThemeContext';
 
 export default function Theme() {
@@ -19,7 +18,7 @@ export default function Theme() {
   };
 
   return (
-    <div className={styles.themeContainer}>
+    <>
       <div className={styles.circleContainer}>
         <div
           className={`${styles.circle} ${styles.theme01}`} // Assign class for theme 01
@@ -36,7 +35,17 @@ export default function Theme() {
           data-theme="03"
           onClick={handleThemeToggle}
         ></div>
+        <div
+          className={`${styles.circle} ${styles.theme04}`} // Assign class for theme 03
+          data-theme="03"
+          onClick={handleThemeToggle}
+        ></div>
+        <div
+          className={`${styles.circle} ${styles.theme05}`} // Assign class for theme 03
+          data-theme="03"
+          onClick={handleThemeToggle}
+        ></div>
       </div>
-    </div>
+    </>
   );
 }

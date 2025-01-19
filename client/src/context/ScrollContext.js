@@ -6,10 +6,10 @@ const ScrollContext = createContext();
 export const ScrollProvider = ({ children }) => {
   const sectionRefs = {
     intro: useRef(null),
-    about: useRef(null),
+    background: useRef(null),
+    skills: useRef(null),
     projects: useRef(null),
     playground: useRef(null),
-    values: useRef(null),
     contact: useRef(null),
   };
 

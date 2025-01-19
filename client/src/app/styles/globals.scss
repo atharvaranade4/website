@@ -20,22 +20,26 @@ body {
 
 /* Theme 1 */
 body.theme--01 {
-  --color--foreground--100: rgb(0, 0, 0);
-  --color--foreground--33: rgba(0 0 0 / 0.33);
-  --color--background--100: rgb(255, 255, 255);
+  --color--foreground--100: rgb(255, 255, 255);
+  --color--foreground--33: rgba(255 255 255 / 0.3);
+  --color--foreground--10: rgba(255 255 255 / 0.05);
+  --color--background--100: rgb(0, 0, 0);
 }
 
 /* Theme 2 */
  body.theme--02 {
-  --color--foreground--100: rgb(255, 255, 255);
-  --color--foreground--33: rgba(255 255 255 / 0.3);
-  --color--background--100: rgb(0, 0, 0);
+  --color--foreground--100: rgb(0, 0, 0);
+  --color--foreground--33: rgba(0 0 0 / 0.33);
+  --color--foreground--10: rgba(0 0 0 / 0.05);
+  --color--background--100: rgb(255, 255, 255);
+
 }
 
 /* Theme 3 */
 body.theme--03 {
   --color--foreground--100: rgb(207 188 236);
   --color--foreground--33: rgba(207 188 236 / 0.3);
+  --color--foreground--10: rgba(207 188 236 / 0.05);
   --color--background--100: rgba(46, 50, 72);
 }
 
@@ -76,12 +80,22 @@ h1 {
   padding: 0;
   margin: 0;
 }
+@media (max-width: 600px) {
+  h1 {
+    font-size: 60px; /* Adjust the size as needed */
+  }
+}
 
 h2 {
-  font-size: 60px;
+  font-size: 80px;
   font-weight: var(--font-weight-bold);
   padding: 0;
   margin: 0;
+}
+@media (max-width: 600px) {
+  h2 {
+    font-size: 40px; /* Adjust the size as needed */
+  }
 }
 
 p {

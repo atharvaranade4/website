@@ -1,7 +1,7 @@
 .projects {
   padding: 0 var(--grid-app-margin);
   display: grid;
-  grid-template-columns: var(--grid-app-columns);
+  grid-template-columns: var(--grid-app-columns-6);
   gap: var(--grid-app-gutter);
 
   @media (max-width: 1280px) {
@@ -9,10 +9,12 @@
   }
 
   @media (max-width: 1020px) {
+    padding: 0 40px;
     grid-template-columns: var(--grid-app-columns-3); // Uses the 4-column setup
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 300px) {
+    padding: 0 20px;
     grid-template-columns: var(--grid-app-columns-1); // Uses the 4-column setup
   }
 }
@@ -20,7 +22,7 @@
 .content {
   padding: calc(var(--grid-app-xheight) - 11px) 0 80px 0;
   // position: relative;
-  grid-column: 4 / -2;
+  grid-column: 3 / -2;
 
   @media (max-width: 1280px) {
     grid-column: 2 / -2;

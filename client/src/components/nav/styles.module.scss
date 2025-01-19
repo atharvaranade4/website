@@ -6,6 +6,8 @@
   font-family: var(--font--family);
   top: var(--grid-app-xheight);
   left: var(--grid-app-margin);
+  display: flex;
+  flex-direction: column;
   display: block; // Default visibility for larger screens
 
   /* Hide by default on smaller screens; controlled by .hidden and .visible classes */
@@ -44,6 +46,13 @@
   &.hidden {
     opacity: 0;
     visibility: hidden; // Hide menu
+  }
+
+  .navMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%
   }
 
   .navitem {
@@ -90,6 +99,13 @@
   .fullscreen .navitem {
     padding: 4px 0; // Increased spacing between items for mobile view
   }
+
+  /* Display Socials below MenuItems only on smaller screens (mobile) */
+  .fullscreen .socialLinksMenu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;  /* Adjust spacing if necessary */
+  }
 }
 
 /* Menu items fade in after fullscreen is visible */
@@ -118,4 +134,46 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.socialLinksMenu {
+  position: fixed;
+  left: var(--grid-app-margin);
+  bottom: calc(var(--grid-app-margin) + 40px);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hide .socialLinksMenu on screens smaller than 1080px */
+@media (min-width: 1080px) {
+  .socialLinksMenu {
+    display: none;
+  }
+}
+
+.socialLinks {
+  font: var(--font--size-small);
+  color: var(--color--foreground--100);
+  transition: color 0.3s; /* Smooth color transitions */
+  position: relative; /* For pseudo-elements and arrow animation */
+  animation: fadeIn 0.3s ease-out forwards; /* Apply the animation */
+  display: inline-block;
+}
+
+.socialLinks:hover {
+  cursor: pointer;
+  color: var(--color--foreground--100);
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 1.2rem; /* Adjust arrow size */
+  transition: color 0.3s ease-in-out; /* Animate arrow movement */
+  color: var(--color--foreground--33)
+}
+
+.socialLinks:hover .arrow {
+  color: var(--color--foreground--100); /* Optionally change arrow color on hover */
 }

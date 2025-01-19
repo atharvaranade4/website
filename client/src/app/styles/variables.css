@@ -5,6 +5,7 @@
   --font-weight-regular: 300;  /* For normal text */
   --font-weight-bold: 700;     /* For bold text */
 
+  --font--size-small: 12px;
   --font--size-regular: 16px;
   --font--size-medium: 22px;
 
@@ -17,5 +18,7 @@
   --grid-app-columns-1: repeat(1, [col-start] 1fr);
   --grid-app-gutter: 20px;
   --grid-app-xheight: 220px;
-  --grid-app-margin: 40px;
+  --grid-app-margin: 80px;
+  --grid-app-margin-mobile: 40px;
+
 }
