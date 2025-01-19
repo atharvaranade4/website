@@ -63,7 +63,7 @@
     flex-direction: column; /* Change layout to column on small screens */
     align-items: flex-start; /* Align items to the start for better layout */
   }
-  .projectCard{
+  .projectCard {
     display: flex;
     flex-direction: column;
   }
@@ -71,10 +71,12 @@
     display: block; /* Show image on smaller screens */
   }
 
-  .projectTitle{
+  .projectTitle {
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
+    flex-direction: column; /* Change to column layout */
+    align-items: flex-start; /* Align text to start */
+    justify-content: flex-start; /* Adjust alignment for better layout */
+    gap: 0.5rem; /* Add space between items */
   }
 
   .projectDescription {
@@ -84,7 +86,7 @@
     color: var(--color--foreground--33);
     font-weight: 400;
   }
-  .project p{
+  .project p {
     padding: 0;
   }
 
@@ -98,3 +100,4 @@
     transform: none; /* Reset transform */
   }
 }
+
