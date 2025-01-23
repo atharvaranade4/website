@@ -1,0 +1,5 @@
+[
+  { "text": "Draggable Text 1", "top": 50, "left": 100 },
+  { "text": "Draggable Text 2", "top": 150, "left": 200 },
+  { "text": "Draggable Text 3", "top": 300, "left": 50 }
+]
