@@ -43,6 +43,22 @@ body.theme--03 {
   --color--background--100: rgba(46, 50, 72);
 }
 
+/* Theme 4 */
+body.theme--04 {
+  --color--foreground--100: rgb(0 52 235);
+  --color--foreground--33: rgba(0 52 235 / 0.3);
+  --color--foreground--10: rgba(0 52 235 / 0.05);
+  --color--background--100: rgba(255 203 20);
+}
+
+/* Theme 5 */
+body.theme--05 {
+  --color--foreground--100: rgb(193 10 109);
+  --color--foreground--33: rgba(193 10 109 / 0.3);
+  --color--foreground--10: rgba(193 10 109 / 0.05);
+  --color--background--100: rgba(54 243 141);
+}
+
 body.mobile-nav--is--transitioning {
   overflow: hidden;
 }

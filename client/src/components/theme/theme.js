@@ -37,12 +37,12 @@ export default function Theme() {
         ></div>
         <div
           className={`${styles.circle} ${styles.theme04}`} // Assign class for theme 03
-          data-theme="03"
+          data-theme="04"
           onClick={handleThemeToggle}
         ></div>
         <div
           className={`${styles.circle} ${styles.theme05}`} // Assign class for theme 03
-          data-theme="03"
+          data-theme="05"
           onClick={handleThemeToggle}
         ></div>
       </div>
