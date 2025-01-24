@@ -3,7 +3,7 @@ import { useInView, motion } from 'framer-motion';
 import styles from './style.module.scss';
 import Image from 'next/image'; // Import Next.js Image component
 import { useScroll } from '@/context/ScrollContext';
-import { slideUp, opacity } from './animation';
+import { slideUp, opacity } from '../../common/animation';
 import Socials from '@/components/socials/socials';
 import Magnetic from '../../common/Magnetic'
 
