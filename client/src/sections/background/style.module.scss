@@ -1,6 +1,32 @@
-.about{
+.backgroundContainer{
+  padding: 0 var(--grid-app-margin);
   height: 1000px;
-  margin-top: 3rem;
-  position: relative;
-  font-size: 1vw;
+  display: grid;
+  grid-template-columns: var(--grid-app-columns-6);
+  gap: var(--grid-app-gutter);
+
+  @media (max-width: 1280px) {
+    grid-template-columns: var(--grid-app-columns-6); // Uses the 4-column setup
+  }
+
+  @media (max-width: 1020px) {
+    padding: 0 40px;
+    grid-template-columns: var(--grid-app-columns-3); // Uses the 4-column setup
+  }
+
+  @media (max-width: 300px) {
+    padding: 0 20px;
+    grid-template-columns: var(--grid-app-columns-1); // Uses the 4-column setup
+  }
+}
+
+.backgroundContent{
+  grid-column: 3 / -1;
+
+  @media (max-width: 1280px) {
+    grid-column: 2 / -1;
+  }
+  @media (max-width: 1020px) {
+    grid-column: 1 / -1;
+  }
 }

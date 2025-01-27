@@ -18,17 +18,17 @@ export default function Main() {
       <section ref={sectionRefs.intro} className={styles.section} data-section="intro">
         <Intro />
       </section>
-      <section ref={sectionRefs.background} className={styles.section} data-section="background">
-        <Background />
-      </section>
-      <section ref={sectionRefs.skills} className={styles.section} data-section="skills">
+      {/* <section ref={sectionRefs.skills} className={styles.section} data-section="skills">
         <Values />
-      </section>
+        </section> */}
       <section ref={sectionRefs.projects} className={styles.section} data-section="projects">
         <Project />
       </section>
       <section ref={sectionRefs.playground} className={styles.section} data-section="playground">
         <Playground />
+      </section>
+      <section ref={sectionRefs.background} className={styles.section} data-section="background">
+        <Background />
       </section>
       <section ref={sectionRefs.contact} className={styles.section} data-section="contact">
         <Contact />
