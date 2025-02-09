@@ -1,14 +1,29 @@
 .contact {
-  height: auto;
-  padding-top: 5rem;
+  position: relative;
+  height: 750px;
+
+  @media (max-width: 1280px) {
+    height: 1200px;
+  }
+
+}
+
+.footerContainer {
+  position: fixed;
+  height: 750px;
+  bottom: 0;
+
   display: flex;
   flex-direction: column;
-  gap: 5rem;
-  margin-bottom: 3rem;
+  justify-content: flex-end;
+
+  @media (max-width: 1280px) {
+    height: 1200px;
+  }
 }
 
 .contactContainer {
-  padding: 0 var(--grid-app-margin);
+  padding: 5rem var(--grid-app-margin);
   display: grid;
   grid-template-columns: var(--grid-app-columns-6);
   gap: var(--grid-app-gutter);
@@ -32,14 +47,15 @@
   display: flex;
   flex-direction: column;
   gap: 10rem;
-  grid-column: 3 / span 2;
+  grid-column: 2 / span 3;
   justify-content: space-between;
 
   @media (max-width: 1280px) {
     grid-column: 2 / -3;
   }
-  @media (max-width: 1020px) {
+  @media (max-width: 1024px) {
     grid-column: 1 / -1;
+    gap: 6rem;
   }
 }
 
@@ -85,7 +101,7 @@
               content: "";
               width: 0%;
               height: 1px;
-              background-color: white;
+              background-color: var(--color--foreground--100);
               display: block;
               margin-top: 2px;
               position: relative;
@@ -121,8 +137,12 @@
   align-items: flex-start;
   
   @media (max-width: 1024px) {
-    grid-column: 1 / span 1;
+    grid-column: 2 / span 2;
     justify-content: flex-start;
+  }
+
+  @media (max-width: 1024px) {
+    grid-column: 1 / -1;
   }
 }
 
@@ -133,11 +153,13 @@
   height: auto; /* Maintain aspect ratio */
   max-width: 500px; /* Optional: cap maximum width */
   object-fit: cover; /* Ensure image fits nicely */
+  opacity: 80%;
 }
 
 .footer {
   display: grid;
-  padding: 0 var(--grid-app-margin);
+  padding: 2rem var(--grid-app-margin);
+  padding-bottom: 2rem;
   grid-template-columns: var(--grid-app-columns-6);
   gap: var(--grid-app-gutter);
 
@@ -146,7 +168,7 @@
   }
 
   @media (max-width: 1020px) {
-    padding: 0 40px;
+    padding: 2rem 40px;
     grid-template-columns: var(--grid-app-columns-3); // Uses the 4-column setup
   }
 
@@ -158,14 +180,14 @@
 
 .footerContent {
   display: flex; /* Allows flexibility */
-  grid-column: 3 / -1;
+  grid-column: 2 / -1;
   justify-content: space-between;
   border-top: 1px solid var(--color--foreground--33);
 
   @media (max-width: 1280px) {
     grid-column: 2 / -1;
   }
-  @media (max-width: 1020px) {
+  @media (max-width: 1024px) {
     grid-column: 1 / -1;
   }
 }

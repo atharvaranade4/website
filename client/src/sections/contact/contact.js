@@ -48,67 +48,69 @@ export default function Contact() {
 		return `${formattedTime} GMT${formattedOffset}`;
 	};
   return (
-	<section ref={sectionRefs.contact} className={styles.contact}>
-		<div className={styles.contactContainer}>
-			<div ref={description} className={styles.contactTextContainer}>
-				<div className={styles.body}>
-					<h2>
-					{
-							phrase.split(" ").map( (word, index) => {
-									return <span key={index} className={styles.mask}>
-											<motion.span variants={slideUp} custom={index} animate={isInView ? "open" : "closed"} key={index}>{word}</motion.span></span>
-							})
-					}
-					</h2>
+	<section ref={sectionRefs.contact} className={styles.contact} style={{clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"}}>
+		<div className={styles.footerContainer}>		
+			<div className={styles.contactContainer}>
+				<div ref={description} className={styles.contactTextContainer}>
+					<div className={styles.body}>
+						<h2>
+						{
+								phrase.split(" ").map( (word, index) => {
+										return <span key={index} className={styles.mask}>
+												<motion.span variants={slideUp} custom={index} animate={isInView ? "open" : "closed"} key={index}>{word}</motion.span></span>
+								})
+						}
+						</h2>
+					</div>
+					<div className={styles.social}>
+					<div>
+						<span>
+								<h3>socials</h3>
+								<Magnetic>
+										<a
+											href="https://www.linkedin.com"
+											target="_blank"
+											rel="noopener noreferrer"
+											className={styles.socialLinks}
+										>
+											LinkedIn
+										</a>
+								</Magnetic>
+						</span>
+								<Magnetic>
+										<a
+											href="https://www.github.com"
+											target="_blank"
+											rel="noopener noreferrer"
+											className={styles.socialLinks}
+										>
+											Github
+										</a>
+								</Magnetic>
 				</div>
-				<div className={styles.social}>
-				<div>
+					</div>
+				</div>
+				<div className={styles.brand}>
+					<Image
+						src="/images/portrait.jpg"
+						alt="Logo"
+						width={700}
+						height={700}
+						className={styles.Logo}
+					/>
+				</div>
+			</div>
+			<div className={styles.footer}>
+				<div className={styles.footerContent}>
 					<span>
-							<h3>socials</h3>
-							<Magnetic>
-									<a
-        						href="https://www.linkedin.com"
-										target="_blank"
-										rel="noopener noreferrer"
-										className={styles.socialLinks}
-        					>
-        						LinkedIn
-      						</a>
-							</Magnetic>
+						<p>Version</p>
+						<p>2024</p>
 					</span>
-							<Magnetic>
-									<a
-        						href="https://www.github.com"
-										target="_blank"
-										rel="noopener noreferrer"
-										className={styles.socialLinks}
-        					>
-        						Github
-      						</a>
-							</Magnetic>
-			</div>
+					<span>
+						<p>Local Time</p>
+						<p>{localTime}</p>
+					</span>
 				</div>
-			</div>
-			<div className={styles.brand}>
-				<Image
-					src="/images/portrait.jpg"
-					alt="Logo"
-					width={700}
-					height={700}
-					className={styles.Logo}
-				/>
-			</div>
-		</div>
-		<div className={styles.footer}>
-			<div className={styles.footerContent}>
-				<span>
-					<p>Version</p>
-					<p>2024</p>
-				</span>
-				<span>
-					<p>Local Time</p>
-					<p>{localTime}</p>
-				</span>
 			</div>
 		</div>
 	</section>
