@@ -96,7 +96,7 @@
 						content: "";
 						width: 0%;
 						height: 1px;
-						background-color: white;
+						background-color: var(--color--foreground--33);
 						display: block;
 						margin-top: 2px;
 						position: relative;
@@ -116,7 +116,6 @@
 					gap: 15px;
 				}
 				h3{
-					color: grey;
 					cursor: default;
 					font-weight: 300;
 					font-size: 1em;

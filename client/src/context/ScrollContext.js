@@ -16,8 +16,8 @@ export const ScrollProvider = ({ children }) => {
   const [currentSection, setCurrentSection] = useState('');
 
   useEffect(() => {
-    console.log('ScrollProvider mounted'); // Log when the provider mounts
-    console.log('Initial sectionRefs:', sectionRefs); // Log initial refs
+    // console.log('ScrollProvider mounted'); // Log when the provider mounts
+    // console.log('Initial sectionRefs:', sectionRefs); // Log initial refs
 
     const options = {
       root: null,
@@ -27,7 +27,7 @@ export const ScrollProvider = ({ children }) => {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        console.log(`Section: ${entry.target.dataset.section}, Is Intersecting: ${entry.isIntersecting}`); // Log entry state
+        // console.log(`Section: ${entry.target.dataset.section}, Is Intersecting: ${entry.isIntersecting}`); // Log entry state
         if (entry.isIntersecting) {
           setCurrentSection(entry.target.dataset.section);
         }
@@ -37,7 +37,7 @@ export const ScrollProvider = ({ children }) => {
     Object.values(sectionRefs).forEach((ref) => {
       if (ref.current) {
         observer.observe(ref.current);
-        console.log(`Observing: ${ref.current.id}`); // Log observed sections
+        // console.log(`Observing: ${ref.current.id}`); // Log observed sections
       }
     });
 
