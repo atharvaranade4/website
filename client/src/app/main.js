@@ -27,9 +27,9 @@ export default function Main() {
       <section ref={sectionRefs.playground} className={styles.section} data-section="playground">
         <Playground />
       </section>
-      <section ref={sectionRefs.background} className={styles.section} data-section="background">
+      {/* <section ref={sectionRefs.background} className={styles.section} data-section="background">
         <Background />
-      </section>
+      </section> */}
       <section ref={sectionRefs.contact} className={styles.section} data-section="contact">
         <Contact />
       </section>

@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useInView, motion, useMotionValue, useSpring } from "framer-motion";
+import { useInView, motion, useMotionValue, useSpring, useScroll  } from "framer-motion";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Box } from "@react-three/drei";
 import textData from "../../../public/data/draggable.json";
@@ -10,8 +10,10 @@ export default function Playground() {
   const containerRef = useRef(null);
   const [randomPositions, setRandomPositions] = useState([]);
   const [isCursorInside, setIsCursorInside] = useState(false); // Tracks if the cursor is inside the container
+  const [isMouseActive, setIsMouseActive] = useState(true); // State to control mouse animation
   const description = useRef(null);
   const isInView = useInView(description);
+  const [isActive, setIsActive] = useState(false);
 
   const cursorSvg = "/images/cursor_arrow.svg";
   const cursorSize = useMotionValue(20); // Cursor size as a motion value
@@ -21,7 +23,7 @@ export default function Playground() {
   };
 
   // Smooth mouse values
-  const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 };
+  const smoothOptions = { damping: 100, stiffness: 500, mass: 0.25 };
   const smoothMouse = {
     x: useSpring(mouse.x, smoothOptions),
     y: useSpring(mouse.y, smoothOptions),
@@ -48,13 +50,33 @@ export default function Playground() {
     };
   });
 
-  const phrase = "Projects in progress...";
+  const phrase = "Ongoing Projects";
   const images = [
     "/images/blogs.jpg",
     "/images/sketch.jpg",
     "/images/3D viewer.jpg",
   ];
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        console.log(rect)
+        const viewportHeight = window.innerHeight;
+        console.log(viewportHeight)
 
+        // Check if more than 50% of the element is within the viewport
+        if ((rect.top) < viewportHeight * 0.4) {
+          setIsActive(true);
+        } else {
+          setIsActive(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   // Generate random positions for images within the container
   useLayoutEffect(() => {
     if (containerRef.current) {
@@ -97,7 +119,7 @@ export default function Playground() {
    
   return (
     <div>
-      <div ref={description} className={styles.playgroundTitle}>
+      {/* <div className={styles.playgroundTitle}>
         <h2>
           {phrase.split(" ").map((word, index) => (
             <span key={index} className={styles.mask}>
@@ -111,10 +133,10 @@ export default function Playground() {
             </span>
           ))}
         </h2>
-      </div>
+      </div> */}
       <div
         ref={containerRef}
-        className={styles.playgroundContainer}
+        className={`${styles.playgroundContainer} ${isActive ? styles.active : ""}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -123,7 +145,7 @@ export default function Playground() {
         style={cursorStyle}
         animate={{
           scale: isCursorInside ? 3 : 1, // Only scale the cursor container
-          transition: { type: "spring", stiffness: 50, damping: 20 },
+          transition: { type: "spring", stiffness: 100, damping: 20 },
         }}
       >
         <div style={svgContainerStyle}></div> {/* This holds the static-sized SVG */}
@@ -144,8 +166,8 @@ export default function Playground() {
               dragElastic={0.2}
               style={{
                 position: "absolute",
-                width: "250px",
-                height: "250px",
+                width: "500px",
+                height: "500px",
                 cursor: "grab",
               }}
               whileDrag={{
@@ -196,7 +218,7 @@ export default function Playground() {
               cursor: "grabbing",
             }}
           >
-            {item.text}
+            <h2>{item.text}</h2>
           </motion.div>
         ))}
       </div>

@@ -1,5 +1,8 @@
 .playgroundContainer{
-  height: 100vh;
+  position: relative;
+  z-index: -1;
+  margin-top: -150vh;
+  height: 110vh;
   position: relative;
   font-size: 1vw;
   overflow: hidden;
@@ -10,16 +13,28 @@
   background-image: radial-gradient(circle, var(--color--foreground--33) 1px, transparent 1px);
   background-size: 20px 20px; /* Adjust spacing of the dots */
   cursor: none;
+  border-top: 0.5px solid var(--color--foreground--33);
+  border-bottom: 0.5px solid var(--color--foreground--33);
+  // opacity: 0;
+  // transition: opacity 0.2s ease-in-out, z-index 0s; 
+
+  &.active {
+    z-index: 2; // Increases z-index when scrolled past 50%
+    // opacity: 1;
+    // transition: opacity 0.2s ease-in-out, z-index 0s;
+  }
 }
 
 .cursor {
   position: fixed;
   pointer-events: none;
+  z-index: 1;  
 }
 
 
-
 .playgroundTitle{
+  position: relative;
+  top: -175vh;
   padding: 0 var(--grid-app-margin);
   display: grid;
   grid-template-columns: var(--grid-app-columns-6);
@@ -57,9 +72,9 @@
       width: 80%;
       font-weight: 300;
     }
-    padding: calc(var(--grid-app-xheight) - 11px) 0 80px 0;
+
     // position: relative;
-    grid-column: 3 / -2;
+    grid-column: 2 / -2;
   
     @media (max-width: 1280px) {
       grid-column: 2 / -2;
