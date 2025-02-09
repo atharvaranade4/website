@@ -1,33 +1,156 @@
+// SLIDER
+
 .projects {
-  padding: 0 var(--grid-app-margin);
-  display: grid;
-  grid-template-columns: var(--grid-app-columns-6);
-  gap: var(--grid-app-gutter);
-
-  @media (max-width: 1280px) {
-    grid-template-columns: var(--grid-app-columns-6); // Uses the 4-column setup
-  }
-
-  @media (max-width: 1020px) {
-    padding: 0 40px;
-    grid-template-columns: var(--grid-app-columns-3); // Uses the 4-column setup
-  }
-
-  @media (max-width: 300px) {
-    padding: 0 20px;
-    grid-template-columns: var(--grid-app-columns-1); // Uses the 4-column setup
-  }
-}
-
-.content {
-  padding: calc(var(--grid-app-xheight) - 11px) 0 80px 0;
   // position: relative;
-  grid-column: 3 / -2;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 1200vh;
+}
 
-  @media (max-width: 1280px) {
-    grid-column: 2 / -2;
-  }
-  @media (max-width: 1020px) {
-    grid-column: 1 / -1;
+.blackContainer {
+  // position: relative;
+  // z-index: 1;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blackContainer {
+  position: relative;
+  z-index: 1000;
+  background-color: var(--color--background--100);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mask-image: linear-gradient(black, black), url("/images/windowMask.svg");
+  mask-composite: exclude;
+  mask-repeat: no-repeat;
+  mask-size: auto, auto;
+  mask-position: center center;
+  mask-border: 1px solid grey;
+}
+
+.innerRectangle {
+  background: var(--color--foreground--33);
+  height: 100%;
+  border: 1px solid grey;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.activeSlide {
+  // position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  opacity: 0.35;
+  z-index: -1;
+
+  img {
+    position: absolute;
+    filter: blur(50px);
+    transform: scale(1.125)
   }
 }
+
+.slider {
+  position: relative;
+  // background-color: rgb(170, 253, 214);
+  position: fixed;
+  top:0;
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+  perspective: 750px;
+  overflow: hidden;
+  // background: lightblue;
+  // z-index: -1;
+}
+
+.slide{
+  // position: absolute;
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slideCopy {
+  p {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: bolder;
+  }
+}
+
+
+
+// .projects {
+//   padding: 0 var(--grid-app-margin);
+//   display: grid;
+//   grid-template-columns: var(--grid-app-columns-6);
+//   gap: var(--grid-app-gutter);
+
+//   @media (max-width: 1280px) {
+//     grid-template-columns: var(--grid-app-columns-6); // Uses the 4-column setup
+//   }
+
+//   @media (max-width: 1024px) {
+//     padding: 0 40px;
+//     grid-template-columns: var(--grid-app-columns-3); // Uses the 4-column setup
+//   }
+
+//   @media (max-width: 300px) {
+//     padding: 0 20px;
+//     grid-template-columns: var(--grid-app-columns-1); // Uses the 4-column setup
+//   }
+// }
+
+// .content {
+//   display: flex;
+//   flex-direction: column;
+//   padding: calc(var(--grid-app-xheight) - 11px) 0 80px 0;
+//   grid-column: 2 / -1;
+
+//   @media (max-width: 1800px) {
+//     grid-column: 2 / -1;
+//   }
+//   @media (max-width: 1020px) {
+//     grid-column: 1 / -1;
+//   }
+// }
+
+// .projectCards{
+//   display: grid;
+//   grid-template-columns: var(--grid-app-columns-3);
+//   gap: var(--grid-app-gutter);
+  
+//   @media (max-width: 1024px) {
+//     grid-template-columns: var(--grid-app-columns-1); // Uses the 4-column setup
+//   }
+// }
+
+// .projectCardContainer {
+//   height: 80vh;
+//   display: flex;
+//   flex-direction: column;
+//   border: 0.5px solid var(--color--foreground--33);
+//   border-radius: 8px;
+
+//   cursor: pointer;
+//   justify-content: space-between;
+//   padding: 1em;
+// }
