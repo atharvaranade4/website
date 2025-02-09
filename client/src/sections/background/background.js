@@ -9,7 +9,7 @@ export default function Background() {
   return (
 	<section ref={sectionRefs.about} className={styles.backgroundContainer}>
 		<div className={styles.backgroundContent}>
-			<h1>Background</h1>
+			<h4>Background</h4>
 		</div>
 	</section>
   )

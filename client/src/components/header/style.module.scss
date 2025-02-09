@@ -1,16 +1,19 @@
 .header{
-  z-index: 1000;
+  z-index: 5;
   width: 100%;
-  position: absolute;
+  position: relative;
   display: flex;
-  z-index: 1;
   color: white;
-  padding: 2rem var(--grid-app-margin);
+  padding: 0.75rem var(--grid-app-margin);
   justify-content: space-between;
   box-sizing: border-box;
   align-items: center;
+  border-bottom: 0.5px solid var(--color--foreground--33);
+  background-color: var(--color--background--100);
+  // border-radius: 8px;
 
-  @media (max-width: 1080px) {
+
+  @media (max-width: 1024px) {
     padding: 2rem var(--grid-app-margin-mobile);
   }
   
@@ -94,7 +97,7 @@
     }
   }
   
-  @media (max-width: 1080px) {
+  @media (max-width: 1024px) {
     .social {
       display: none;
     }
@@ -137,7 +140,7 @@ margin-right: 10rem;
   gap: 16px;
   cursor: pointer;
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1024px) {
     display: flex;
   }
 }
