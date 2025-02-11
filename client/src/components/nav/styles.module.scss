@@ -11,7 +11,7 @@
   display: block; // Default visibility for larger screens
 
   /* Hide by default on smaller screens; controlled by .hidden and .visible classes */
-  @media (max-width: 1080px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 

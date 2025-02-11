@@ -61,9 +61,9 @@ export default function Playground() {
     const handleScroll = () => {
       if (containerRef.current) {
         const rect = containerRef.current.getBoundingClientRect();
-        console.log(rect)
+        // console.log(rect)
         const viewportHeight = window.innerHeight;
-        console.log(viewportHeight)
+        // console.log(viewportHeight)
 
         // Check if more than 50% of the element is within the viewport
         if ((rect.top) < viewportHeight * 0.4) {
@@ -110,6 +110,7 @@ export default function Playground() {
     width: "100%", 
     height: "100%",
     backgroundImage: isCursorInside ? `url(${cursorSvg})` : "none",
+    backgroundSize: "80% 80%",  // Adjust percentage as needed;
     backgroundColor: "var(--color--foreground--33)",
     backgroundSize: "contain",  // Prevent scaling of the SVG
     backgroundRepeat: "no-repeat",

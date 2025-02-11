@@ -1,7 +1,10 @@
 .intro{
-  height: 1000px;
+  height: 100VH;
   position: relative;
   font-size: 1vw;
+  background: var(--color--background--100);
+  border-bottom: solid 1px var(--color--foreground--33);
+  z-index: 2;
 }
 
 .description p{
